@@ -1,0 +1,39 @@
+:host {
+  display: block;
+  padding: 1.6rem;
+}
+
+form {
+  border: 1px solid #d3d6d9;
+  border-radius: 3px;
+  padding: 16px 24px;
+}
+
+h4 {
+  font-size: 20px;
+  color: #007bff;
+}
+.file-upload {
+  margin-left: 14px;
+  margin-top: 14px;
+}
+
+.mandatory {
+  &::after {
+    content: "\002A";
+    display: inline-block;
+    color: rgba(255,0,0, 1);
+    font-size: 16px;
+    vertical-align: text-top;
+    margin: -.1rem 0 0 0.3rem;
+    position: absolute;
+  }
+}
+
+input.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+.help-block {
+  font-size: 11px;
+  color: #8c8b8b;
+}

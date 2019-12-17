@@ -1,0 +1,19 @@
+<h4>Your list of profiles</h4>
+<table class="table table-bordered" *ngIf="profiles">
+  <thead>
+  <tr>
+    <th scope="col">First Name</th>
+    <th scope="col">Last Name</th>
+    <th scope="col">Email</th>
+    <th scope="col">Designation</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let profile of profiles let index = i" (click)="openDetailView(profile)">
+    <td>{{ profile.firstName }}</td>
+    <td>{{ profile.lastName }}</td>
+    <td>{{ profile.email }}</td>
+    <td class="delete-action">{{ profile.designation }} <span class="delete-icon" (click)="onDeleteRow(profile, $event)"></span></td>
+  </tr>
+  </tbody>
+</table>

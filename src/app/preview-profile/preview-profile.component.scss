@@ -1,0 +1,80 @@
+:host {
+  display: block;
+  height: 100%;
+}
+
+.preview-page {
+  display: flex;
+  &__preview, &__table-view {
+    flex: 1;
+  }
+}
+
+.preview, .no-profile {
+  border: 2px solid #d3d6d9;
+  padding: 20px;
+  margin: 16px auto;
+  border-radius: 3px;
+  max-width: 800px;
+  height: 100%;
+  position: relative;
+
+  &__data {
+    height: calc(100% - 74px);
+    overflow: auto;
+  }
+  .designation {
+    color: #808387;
+  }
+}
+
+.card {
+  display: inline-flex;
+  flex-direction: unset;
+  border: none;
+}
+.card-img-top {
+  width: 130px;
+}
+.chip {
+  background-color: #E2E9F0;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #3D566F;
+  border-radius: 16px;
+  display: inline-block;
+  margin: 4px;
+}
+.card-title {
+  white-space: nowrap;
+}
+.edit {
+  position: absolute;
+  right: 30px;
+  &:hover {
+    text-decoration: none;
+    color: blue;
+  }
+}
+
+.create-profile-link {
+  color: blue !important;
+  display: inline-block;
+  margin-left: 10px;
+  &:hover {
+    text-decoration: underline !important;
+  }
+}
+
+.loading-mask {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, .1);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}

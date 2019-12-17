@@ -1,0 +1,33 @@
+:host {
+  display: block;
+  padding: 10px;
+}
+h4 {
+  font-size: 18px;
+  color: #414344;
+  border-bottom: 1px solid #d3d6d9;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.delete-action {
+  position: relative;
+}
+
+.delete-icon {
+  width: 24px;
+  height: 24px;
+  background: url("../../assets/delete.svg") no-repeat;
+  position: absolute;
+  right: 16px;
+  cursor: pointer;
+  display: none;
+}
+
+tr {
+  &:hover {
+    .delete-icon {
+      display: inline-block;
+    }
+  }
+}

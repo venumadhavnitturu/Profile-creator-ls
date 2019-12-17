@@ -1,0 +1,64 @@
+<div class="no-profile" *ngIf="!userInfo && !profilesArray.length">
+  <p>Hi!! User Your Profile not yet created</p>
+  <span>Create Your Profile Now</span> <a routerLink="/createProfile" class="create-profile-link">Create Profile</a>
+</div>
+<div class="preview-page">
+  <div class="preview-page__table-view" *ngIf="profilesArray.length >= 2">
+    <app-profiles-table [profiles]="profilesArray" (selectedUser)="onDetailViewOpen($event)"></app-profiles-table>
+<!--    <app-profiles-table [profiles]="profilesArray" (selectedUser)="onDetailViewOpen($event)" (deleteProfile)="getProfiles()"></app-profiles-table>-->
+  </div>
+  <div class="preview-page__preview" *ngIf="userInfo">
+    <div class="preview">
+      <a
+        [routerLink]="['/createProfile']"
+        [queryParams]="{allowEdit: 'true'}"
+        (click)="onEdit()" class="edit">Edit</a>
+      <div class="card">
+        <img [src]="userInfo.profilePic" class="card-img-top" alt="Profile-photo">
+        <div class="card-body">
+          <h5 class="card-title">{{ userInfo.firstName }}</h5>
+          <span class="designation">{{ userInfo.designation }}</span>
+        </div>
+      </div>
+      <div class="preview__data">
+        <hr>
+        <ul class="list-group list-group-horizontal">
+          <li class="list-group-item">Name :</li>
+          <li class="list-group-item flex-fill"> {{ userInfo.firstName }} {{ userInfo.lastName }} </li>
+        </ul>
+        <hr>
+        <ul class="list-group list-group-horizontal">
+          <li class="list-group-item">Email :</li>
+          <li class="list-group-item flex-fill"> {{ userInfo.email }} </li>
+        </ul>
+        <hr>
+        <ul class="list-group list-group-horizontal">
+          <li class="list-group-item">Mobile :</li>
+          <li class="list-group-item flex-fill"> {{ userInfo.mobile }}</li>
+        </ul>
+        <hr>
+        <ul class="list-group list-group-horizontal">
+          <li class="list-group-item">Designation :</li>
+          <li class="list-group-item flex-fill"> {{ userInfo.designation }} </li>
+        </ul>
+        <hr>
+        <ul class="list-group list-group-horizontal">
+          <li class="list-group-item">Experience</li>
+          <li class="list-group-item flex-fill"> {{ userInfo.experience }} </li>
+        </ul>
+        <hr>
+        <ul class="list-group list-group-horizontal">
+          <li class="list-group-item">Skills :</li>
+          <li class="list-group-item flex-fill">
+            <span class="chip" *ngFor="let skill of userInfo.skills"> {{ skill }} </span>
+          </li>
+        </ul>
+        <hr>
+        <ul class="list-group list-group-horizontal">
+          <li class="list-group-item">Current Organization</li>
+          <li class="list-group-item flex-fill"> {{ userInfo.currentOrg }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

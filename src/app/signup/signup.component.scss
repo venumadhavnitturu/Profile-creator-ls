@@ -1,0 +1,73 @@
+:host {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e9faff;
+}
+
+.login-form {
+  width: 500px;
+  height: 500px;
+  background-color: #fff;
+  box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+  padding: 65px 55px 50px 55px;
+  position: relative;
+}
+.heading {
+  text-align: center;
+  font-size: 30px;
+  padding-bottom: 33px;
+}
+
+.form-control {
+  height: 65px;
+  outline: none;
+  border-radius: 0;
+  &:focus {
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: none;
+  }
+}
+
+button {
+  width: 100%;
+  height: 55px;
+}
+
+.forgot, .signup {
+  margin: 30px 0 10px;
+  font-size: 16px;
+  span {
+    display: inline-block;
+    margin-right: 5px;
+  }
+}
+
+.thanks, .login-here {
+  font-size: 16px;
+  text-align: center;
+}
+
+.login-here {
+  a {
+    color: #007bff;
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;;
+    }
+  }
+}
+
+.abs-center {
+  position: absolute;
+  right: 50%;
+  bottom: 50%;
+  transform: translate(50%, 50%);
+}
+
+input.ng-invalid.ng-touched {
+  border-color: red;
+}
